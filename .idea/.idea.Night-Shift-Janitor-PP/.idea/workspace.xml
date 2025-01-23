@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AbandonedHospital/Tunnels/LightTunnels/L_Tunnel_BB1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AbandonedHospital/Tunnels/LightTunnels/L_Tunnel_BB1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AbandonedHospital/Tunnels/LightTunnels/L_Tunnel_LB1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AbandonedHospital/Tunnels/LightTunnels/L_Tunnel_LB1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AbandonedHospital/Tunnels/LightTunnels/L_Tunnel_RB1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AbandonedHospital/Tunnels/LightTunnels/L_Tunnel_RB1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1737488306796</updated>
       <workItem from="1737488306797" duration="7000" />
-      <workItem from="1737565834405" duration="2814000" />
+      <workItem from="1737565834405" duration="2815000" />
     </task>
     <servers />
   </component>
