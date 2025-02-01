@@ -1,9 +1,9 @@
-using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class HeadFollowMouse : MonoBehaviour
 {
-    [SerializeField] private Transform headBone; 
+    [SerializeField] private Transform headBone;
     [SerializeField] private float sensitivity = 2f;
     [SerializeField] private float maxXRotation = 30f;
     [SerializeField] private float maxYRotation = 45f;
@@ -11,46 +11,53 @@ public class HeadFollowMouse : MonoBehaviour
 
     private float currentXRotation = 0f;
     private float currentYRotation = 0f;
-    private bool isMouseMoving = false;
+    private Quaternion lastHeadRotation; 
     private Animator animator;
+
+    private PlayerInput playerInput;
+    private InputAction lookAction;
 
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
+        playerInput = GetComponent<PlayerInput>();
+        lookAction = playerInput.actions["Look"]; // Assumes you have a "Look" action in your Input Actions
     }
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        lastHeadRotation = headBone.localRotation;
     }
 
     private void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
+        RotateHeadWithMouse();
+    }
 
-        if (Mathf.Abs(mouseX) > 0.01f || Mathf.Abs(mouseY) > 0.01f)
+    private void RotateHeadWithMouse()
+    {
+        if (headBone == null) return;
+
+        Vector2 mouseDelta = lookAction.ReadValue<Vector2>(); // Get mouse delta using input actions
+
+        if (mouseDelta.magnitude > 0.01f) // Check if mouse has moved
         {
-            isMouseMoving = true;
-            animator.enabled = false; 
+            currentYRotation += mouseDelta.x * sensitivity; // Apply delta to Y (horizontal)
+            currentXRotation -= mouseDelta.y * sensitivity; // Apply delta to X (vertical)
 
-            currentYRotation += mouseX * sensitivity;
-            currentXRotation -= mouseY * sensitivity;
+            currentYRotation = Mathf.Clamp(currentYRotation, -maxYRotation, maxYRotation); // Clamp Y rotation
+            currentXRotation = Mathf.Clamp(currentXRotation, -maxXRotation, maxXRotation); // Clamp X rotation
 
-            currentYRotation = Mathf.Clamp(currentYRotation, -maxYRotation, maxYRotation);
-            currentXRotation = Mathf.Clamp(currentXRotation, -maxXRotation, maxXRotation);
+            Quaternion targetRotation = Quaternion.Euler(currentXRotation, currentYRotation, 0f);
+            headBone.localRotation = Quaternion.Slerp(headBone.localRotation, targetRotation, Time.deltaTime * smoothSpeed);
 
-            if (headBone != null)
-            {
-                Quaternion targetRotation = Quaternion.Euler(currentXRotation, currentYRotation, 0f);
-                headBone.localRotation = Quaternion.Slerp(headBone.localRotation, targetRotation, Time.deltaTime * smoothSpeed);
-            }
+            lastHeadRotation = headBone.localRotation; // Update last head rotation when the mouse moves
         }
-        else if (isMouseMoving)
+        else // When the mouse stops moving
         {
-            isMouseMoving = false;
-            animator.enabled = true; 
+            headBone.localRotation = Quaternion.Slerp(headBone.localRotation, lastHeadRotation, Time.deltaTime * smoothSpeed); // Smooth transition to last rotation
         }
     }
 }

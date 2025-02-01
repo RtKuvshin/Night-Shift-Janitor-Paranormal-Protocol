@@ -6,7 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="a79980e2-1561-4427-bebf-0621b5b011f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Night-Shift-Janitor-PP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Night-Shift-Janitor-PP/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Animators/CharacterAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Animators/CharacterAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Textures/Ch11_1001_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Textures/Ch11_1001_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Textures/Ch11_1002_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Textures/Ch11_1002_Normal.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/HeadFollowMouse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/HeadFollowMouse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +102,9 @@
       <workItem from="1737565834405" duration="2815000" />
       <workItem from="1737725274033" duration="6346000" />
       <workItem from="1737807346086" duration="2617000" />
+      <workItem from="1737829293146" duration="643000" />
+      <workItem from="1737883344029" duration="4658000" />
+      <workItem from="1738449646600" duration="1869000" />
     </task>
     <servers />
   </component>
