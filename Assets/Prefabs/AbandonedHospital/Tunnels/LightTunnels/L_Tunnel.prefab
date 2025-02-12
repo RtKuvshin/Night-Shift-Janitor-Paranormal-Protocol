@@ -130,6 +130,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: L_Tunnel
       objectReference: {fileID: 0}
+    - target: {fileID: 2098796579591631312, guid: 699351ab743376b4d83e93ccb8e327d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9062592305035630023, guid: 699351ab743376b4d83e93ccb8e327d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
