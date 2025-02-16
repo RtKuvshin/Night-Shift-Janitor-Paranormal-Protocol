@@ -33,20 +33,9 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         moveDirection = moveAction.ReadValue<Vector2>();
-        float yMovement = moveDirection.y;
         bool currentlyMoving = moveDirection.magnitude > 0;
-        if (yMovement >= 0)
-        {
-            Vector3 moveVelocity = new Vector3(moveDirection.x * moveSpeed, rb.velocity.y, yMovement * moveSpeed);
-            rb.velocity = moveVelocity;
-        }
-        else
-        {
-            currentlyMoving = false;
-        }
-        
-        
-        
+        Vector3 moveVelocity = new Vector3(moveDirection.x * moveSpeed, rb.velocity.y, moveDirection.y * moveSpeed);
+        rb.velocity = moveVelocity;
 
         if (currentlyMoving && !isMoving)
         {
@@ -58,5 +47,7 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetTrigger("Idle");
             isMoving = false;
         }
+        
     }
+
 }
