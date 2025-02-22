@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private Transform headTarget;
+
     private Vector2 moveDirection = Vector2.zero;
     private Rigidbody rb;
     private Animator _animator;
@@ -34,9 +36,26 @@ public class PlayerMovement : MonoBehaviour
     {
         moveDirection = moveAction.ReadValue<Vector2>();
         bool currentlyMoving = moveDirection.magnitude > 0;
-        Vector3 moveVelocity = new Vector3(moveDirection.x * moveSpeed, 0, moveDirection.y * moveSpeed);
-        //rb.velocity = moveVelocity;
 
+        if (headTarget != null)
+        {
+            
+            Vector3 headForward = headTarget.forward;
+            Vector3 headRight = headTarget.right;
+
+            
+            headForward.y = 0;
+            headRight.y = 0;
+
+            headForward.Normalize();
+            headRight.Normalize();
+
+            
+            Vector3 moveVelocity = (headForward * moveDirection.y + headRight * moveDirection.x) * moveSpeed;
+            moveVelocity.y = rb.velocity.y; 
+
+            rb.velocity = moveVelocity;
+        }
 
         if (currentlyMoving && !isMoving)
         {
@@ -48,7 +67,8 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetTrigger("Idle");
             isMoving = false;
         }
-        
     }
+
+
 
 }
