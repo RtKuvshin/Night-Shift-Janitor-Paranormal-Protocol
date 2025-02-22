@@ -34,8 +34,9 @@ public class PlayerMovement : MonoBehaviour
     {
         moveDirection = moveAction.ReadValue<Vector2>();
         bool currentlyMoving = moveDirection.magnitude > 0;
-        Vector3 moveVelocity = new Vector3(moveDirection.x * moveSpeed, rb.velocity.y, moveDirection.y * moveSpeed);
-        rb.velocity = moveVelocity;
+        Vector3 moveVelocity = new Vector3(moveDirection.x * moveSpeed, 0, moveDirection.y * moveSpeed);
+        //rb.velocity = moveVelocity;
+
 
         if (currentlyMoving && !isMoving)
         {
