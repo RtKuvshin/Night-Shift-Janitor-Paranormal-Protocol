@@ -40,8 +40,8 @@ public class PlayerMovement : MonoBehaviour
         if (headTarget != null)
         {
             
-            Vector3 headForward = headTarget.forward;
-            Vector3 headRight = headTarget.right;
+            Vector3 headForward = transform.forward;
+            Vector3 headRight = transform.right;
 
             
             headForward.y = 0;
@@ -69,6 +69,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Walls"))
+        {
+            
+        }
+    }
 }

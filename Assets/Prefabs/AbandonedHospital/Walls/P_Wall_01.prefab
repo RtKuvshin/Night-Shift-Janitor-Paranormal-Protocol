@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 493860}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: P_Wall_01
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 33319968708103316}
   - component: {fileID: 23364929615377690}
   - component: {fileID: 64165276453591286}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 7735352866418785563}
   - component: {fileID: 2785761305235509195}
   - component: {fileID: 7141885636457656952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
