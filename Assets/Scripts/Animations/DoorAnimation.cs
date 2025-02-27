@@ -101,7 +101,8 @@ public class DoorAnimation : MonoBehaviour
             {
                 _animator.SetTrigger("Opened");
             }
-            isDoorOpen = !isDoorOpen; // Toggle the door state
+            isDoorOpen = !isDoorOpen; 
+            Debug.Log($"IsDoorOpen: {isDoorOpen}");
         }
     }
 
